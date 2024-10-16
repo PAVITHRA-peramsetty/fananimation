@@ -1,0 +1,131 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+   
+}
+
+.mfan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+    width: 100%;
+    background-color: black;
+    gap: 10px;
+}
+
+.emp {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fan {
+    background-color: white;
+    height: 200px;
+    width: 25px;
+    border-radius: 5px;
+    transform-style: preserve-3d;
+    transform: rotate(0deg);
+    position: relative;
+    z-index: 200;
+    animation: fan 5s linear infinite; /* Default speed set to 5s per rotation */
+}
+
+.fan::before {
+    content: "";
+    background-color: white;
+    height: 200px;
+    width: 25px;
+    border-radius: 5px;
+    transform-style: preserve-3d;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 0;
+}
+
+.fan::after {
+    content: "";
+    background-color: brown;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 43%;
+    left: -2px;
+}
+
+.stand {
+    height: 280px;
+    width: 17px;
+    background-color: brown;
+    border-radius: 2px;
+    margin-top: -100px;
+    position: relative;
+    z-index: 1;
+}
+
+.btm {
+    height: 20px;
+    width: 100px;
+    background-color: brown;
+    position: absolute;
+    bottom: 0;
+    left: -43px;
+    border-radius: 6px;
+}
+
+.btm1 {
+    height: 20px;
+    width: 120px;
+    background-color: brown;
+    position: absolute;
+    bottom: -10px;
+    left: -54px;
+    border-radius: 6px;
+}
+
+@keyframes fan {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.bts {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 53%;
+    z-index: 200;
+}
+
+button {
+    position: relative;
+    padding: 3px;
+    margin: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: brown;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: brown;
+    color: white;
+}

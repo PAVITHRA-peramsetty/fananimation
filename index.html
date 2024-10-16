@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fan</title>
+    <link rel="stylesheet" href="fan.css">
+</head>
+<body>
+    <div class="mfan">
+        <div class="emp">
+            <div class="fan"></div>
+            <div class="stand">
+                <div class="btm"></div>
+                <div class="btm1"></div>
+            </div>
+        </div>
+        <div class="bts">
+            <div><button type="button" id="btn1">2</button></div>
+            <div><button type="button" id="btn2">1</button></div>
+            <div><button type="button" id="btn3">0</button></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click", function () {
+            document.querySelector(".fan").style.animationDuration = '0.5s'; // Stop the fan
+        });
+
+        document.getElementById("btn2").addEventListener("click", function () {
+            document.querySelector(".fan").style.animationDuration = '1.5s'; // Medium speed
+        });
+
+        document.getElementById("btn3").addEventListener("click", function () {
+            document.querySelector(".fan").style.animationDuration = '0s'; // Slow speed
+        });
+    </script>
+</body>
+
+</html>

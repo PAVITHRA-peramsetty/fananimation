@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+
+.mfan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    z-index: -2;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.emp {
+    position: relative;
+}
+
+.fan {
+    background-color: white;
+    height: 200px;
+    width: 25px;
+    border-radius: 5px;
+    transform-style: preserve-3d;
+    transform: rotate(0deg);
+    position: relative;
+    z-index: 200;
+    animation: fan 0.5s linear infinite;
+}
+
+.fan::before {
+    content: "";
+    background-color: white;
+    height: 200px;
+    width: 25px;
+    border-radius: 5px;
+    transform-style: preserve-3d;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 0;
+}
+
+.fan::after {
+    content: "";
+    background-color: brown;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    transform: rotate(120deg);
+    position: absolute;
+    top: 43%;
+    left: -2px;
+}
+
+.stand {
+    height: 280px;
+    width: 17px;
+    background-color: brown;
+    position: absolute;
+    border-radius: 2px;
+    top: 50%;
+    left: 15%;
+    z-index: -1;
+}
+
+.btm {
+    height: 20px;
+    width: 100px;
+    background-color: brown;
+    transform-style: preserve-3d;
+    position: absolute;
+    bottom: 0;
+    left: -43px;
+    border-radius: 6px;
+}
+
+.btm1 {
+    height: 20px;
+    width: 120px;
+    background-color: brown;
+    transform-style: preserve-3d;
+    position: absolute;
+    bottom: -10px;
+    left: -54px;
+    border-radius: 6px;
+}
+
+button {
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    width: 30px; /* Increased size for better clickability */
+    height: 30px; /* Added height for better clickability */
+    text-align: center;
+    padding: 0;
+    z-index: 20;
+    font-weight: 700;
+    background-color: #fff; /* Background color for visibility */
+    cursor: pointer; /* Pointer cursor to indicate it's clickable */
+    user-select: none; /* Prevents text selection */
+}
+
+@keyframes fan {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
